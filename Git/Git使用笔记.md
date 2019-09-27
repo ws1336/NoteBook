@@ -28,6 +28,14 @@ git add README.md #追踪README.md文件
 git commit -m "添加了readme"  
 ```
 
+#### 4. 丢弃工作区更改
+
+```shell
+git checkout -- <文件名>  #丢弃工作区更改
+```
+
+
+
 ## 远程提交到github仓库
 
 #### 1. 在github上建立仓库，并复制仓库地址
