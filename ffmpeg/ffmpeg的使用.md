@@ -3,7 +3,7 @@
 ## 1. 视频分割
 
 ```shell
-ffmpeg -ss 01:00:00 -i input_file_h264.mp4 -vcodec copy -acodec copy -t 00:06:00 output_file.mp4
+ffmpeg -ss 00:00:00 -i input.mp4 -vcodec copy -acodec copy -t 00:01:00 output.mp4
 ```
 
 ## 2. 视频转图片
@@ -12,7 +12,15 @@ ffmpeg -ss 01:00:00 -i input_file_h264.mp4 -vcodec copy -acodec copy -t 00:06:00
 ffmpeg -i ./output_file.avi -ss 0:0:0 -t 0:0:10 -r 25 -f image2 ./pic/%06d.jpg
 ```
 
-## 3. 参数说明： 
+## 3.图片转视频
+
+```shell
+ffmpeg -r 10 -f image2 -i ./%d.jpg -vcodec libx264 -r 5  test.mp4
+```
+
+
+
+## 4. 参数说明： 
 
 ffmpeg -i [输入文件名] [参数选项] -f [格式] [输出文件] 
 

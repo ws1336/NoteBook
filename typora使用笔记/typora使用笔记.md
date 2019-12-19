@@ -58,10 +58,11 @@ emoji
 mermaid
 
 ```mermaid
-graph TD;
-	开始-->条件a;
-	开始-->条件b;
-	条件a-->条件b;
-	条件b-->结束;
+graph LR;
+A(Chritmas)--Get money-->B[Go shoping];
+B-->C{让我想想};
+C-->D[Laptop];
+C-->E[iPhone];
+C-->F["fa:fa-car Car"];
 
 ```

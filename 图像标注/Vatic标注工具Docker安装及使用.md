@@ -7,7 +7,7 @@
 2. 创建容器
 
    ```shell
-   sudo docker run -it -p 8111:80 -v $MY_VATIC_WORKING_DIR:/root/vatic/data npsvisionlab/vatic-docker /bin/bash
+   sudo docker run -it -p 8111:80 -v $MY_VATIC_WORKING_DIR:/root/vatic/data npsvisionlab/vatic-docker /bin/bas
    ```
 
 3. 重新进入容器：使用如下常见的docker指令：
@@ -15,29 +15,28 @@
    查询之前容器的container id：
 
    ```
-   docker ps –a
+   sudo docker ps –a
    ```
 
    开始容器：
 
    ```
-   docker start {container id}
+   sudo docker start {container id}
    ```
 
    进入容器：
 
    ```
-   docker attach {container id}
+   sudo docker attach {container id}
    ```
-
 
 ## 二 Docker 文件传输
 
 1. Docker 与本地文件传递
 
    ```shell
-   docker cp 本地文件路径 ID全称:容器路径  #本地传递到容器
-   docker cp ID全称:容器文件路径 本地路径  #容器传输到本体
+   sudo docker cp 本地文件路径 ID全称:容器路径  #本地传递到容器
+   sudo docker cp ID全称:容器文件路径 本地路径  #容器传输到本体
    ```
 
 2. 文件压缩方式
@@ -98,7 +97,8 @@
    ```shell
    turkic visualize identifier $output_path  --merge  --renumber
    cd $output_path
-   ffmpeg -i %d.jpg -vcodec mpeg4 output.avi
+   #ffmpeg -i %d.jpg -vcodec mpeg4 output.avi
+   ffmpeg -r 10 -f image2 -i ./%d.jpg -vcodec libx264 test.mp4
    #支持导出带标注box的图片集合，并可以通过ffmpeg合成为一段完成的演示视频
    ```
 
